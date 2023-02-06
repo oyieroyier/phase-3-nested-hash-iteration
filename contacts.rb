@@ -17,9 +17,33 @@ def contacts
   }
 end
 
+
+=begin 
+
+A different approach; rejected by the checker.
+ 
 def remove_strawberry(contacts)
   # your code here!
+  contacts["Freddie Mercury"].each do |key, value|
+    if value.include?("strawberry")
+      # binding.pry
+      value.delete("strawberry")
+    end
+  end
 end
 
+=end
+
 # print the output to the terminal for inspection
-pp remove_strawberry(contacts)
+
+
+def remove_strawberry(contacts)
+  # your code here!
+  contacts["Freddie Mercury"].each do |key, value|
+    if key == :favorite_ice_cream_flavors
+      value.delete_if { |item| item == "strawberry"}
+    end
+  end
+end
+  pp remove_strawberry(contacts)
+
