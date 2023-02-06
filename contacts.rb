@@ -45,5 +45,5 @@ def remove_strawberry(contacts)
     end
   end
 end
-  pp remove_strawberry(contacts)
+p remove_strawberry(contacts)
 
